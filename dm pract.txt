@@ -1,0 +1,202 @@
+practical 1
+
+absolute function
+x=seq(-30,30,0.005)
+y=abs(x)
+plot(x,y,main="absolute function",xlab="x",ylab="y=abs(x)")
+
+logarithm
+x=seq(-30,30,0.005)
+y=log(x)
+plot(x,y,main="logical function",xlab="x",ylab="y=log(x)")
+
+exponential function
+x=seq(-30,30,0.005)
+y=exp(x)
+plot(x,y,main="exponential function",xlab="x",ylab="y=exp(x)")
+
+flooring function
+x=seq(0,10,0.52)
+y=floor(x)
+plot(x,y,main="flooring function",xlab="x",ylab="y=floor(x)")
+
+ceiling function
+x=seq(0,10,0.52)
+y=ceiling(x)
+plot(x,y,main="ceilinging function",xlab="x",ylab="y=ceiling(x)")
+
+flooring function
+x=seq(0,10,0.52)
+y=floor(x)
+plot(x,y,main="flooring function",xlab="x",ylab="y=floor(x)")
+
+sin function
+x=seq(-30,30,0.005)
+y=sin(x)
+plot(x,y,main="sin function",xlab="x",ylab="y=sin(x)")
+
+cos function
+x=seq(-30,30,0.005)
+y=cos(x)
+plot(x,y,main="cos function",xlab="x",ylab="y=cos(x)")
+
+
+
+practical 2 (reccurence)
+
+1.]Recur_Factorial<-function(n)
+if(n==1){return(n)}else{return(n*Recur_Factorial(n-1))}
+Recur_Factorial(10)
+
+2.]R<-function(n)
+{if (n <= 1) {
+return(n)
+} else {
+return (R(n-1) + R(n-2))
+}
+}
+n=as.integer (readline(prompt="How Many Terms? :"))
+How Many Terms? :10
+if (n<= 0) {
+print ("PLEASE ENTER A POSITIVE NUM!!!")
+} else {
+print("Fibonaicc Series:")
+for (i in 0: (n-1)) {
+print(R(i))
+}
+}
+
+
+practical 3 
+install.packages("igraph")
+library(igraph)
+graph.directed<-graph(c(1,2, 2,3, 3,1, 2,4, 5,5, 3,6, 7,1, 7,5),directed=TRUE)
+plot(graph.directed)
+
+graph.directed<-graph(c(1,2, 2,3),directed=TRUE)
+plot(graph.directed)
+
+graph.directed<-graph(c(1,1, 2,2, 3,3),directed=TRUE)
+plot(graph.directed)
+
+graph.directed<-graph(c(1,2, 2,2, 2,4, 3,2, 3,4, 4,1, 4,3),directed=TRUE)
+plot(graph.directed)
+
+
+
+practical 4
+graph.directed<-graph(c("a","d", "d","e", "r","f"),directed=TRUE)
+plot(graph.directed)
+
+graph.directed<-graph(c("a","1", "d","1", "r","2"),directed=TRUE)
+plot(graph.directed)
+
+graph.directed<-graph(c("1","r", "2","5", "3","r"),directed=TRUE)
+plot(graph.directed)
+
+
+
+practical 5 union of graph
+A<-graph(c(1,2, 2,3, 3,1, 2,4, 5,5, 3,6, 7,1, 7,5),directed=TRUE)
+plot(A)
+C<-graph(c(1,2, 2,3, 3,1, 2,4, 5,5, 3,6, 7,1, 5,1),directed=TRUE)
+plot(C)
+g<-union(A,C)
+plot(g)
+M<-graph(c("A","B", "B","D", "D,"C", "C","A"),directed=TRUE)
+plot(M)
+
+practical 6 intersection of gfraph
+A<-graph(c(1,2, 2,3, 3,1, 2,4, 5,5, 3,6, 7,1, 7,5),directed=TRUE)
+plot(A)
+C<-graph(c(1,2, 2,3, 3,1, 2,4, 5,5, 3,6, 7,1, 7,5, 5,1),directed=TRUE)
+plot(C)
+g<-intersection(A,C)
+plot(g)
+
+P<-graph(c("A","B", "B","D", "C","D" "B","C", "A","C", "C","F", "C","E"),directed=TRUE)
+plot(P)
+Q<-graph(c("A","B", "A","D", "A","C" "C","F", "B","D", "A","D", "D","E", "F","H"),directed=TRUE)
+plot(Q)
+g<-intersection(P,Q)
+plot(g)
+
+
+practical 7
+library(data.tree)
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+print(g)
+
+
+
+practical 8
+
+
+library(data.tree)
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+g$Get('level',traversal="pre-order")
+
+
+
+practical-9 
+
+library(data.tree)
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+g$Get('level',traversal="post-order")
+
+
+practical-10
+
+library(data.tree)
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+g$Get('level',traversal="in-order")
+
+
+practical-11
+
+library(data.tree)
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+g$v2$AddChild("v6")
+print(g)
+
+practical-12
+
+g<-Node$new("v1")
+v2<-g$AddChild("v2")
+g$v2$AddChild("v6")
+v3<-g$AddChild("v3")
+v4<-v3$AddChild("v4")
+v5<-v3$AddChild("v5")
+g$v2$RemoveChild("v6")
+print(g)
+
+
+
+
+
+
+
+
+
+
+
